@@ -36,7 +36,7 @@ jobs:
       - name: deploy # 部署
 
         run: |
-          ssh work@120.77.213.159"
+          ssh -t -t work@120.77.213.159"
 
            # 【注意】用 work 账号登录，手动创建 /home/work/imooc-lego 目录
            # 然后 git clone https://username:password@github.com/imooc-lego/biz-editor-server.git -b dev （私有仓库，使用 github 用户名和密码）
@@ -52,5 +52,5 @@ jobs:
             docker-compose build editor-server; # 和 docker-compose.yml service 名字一致
            docker-compose up -d;
           "
-           - name: delete ssh key # 删除 ssh key
-              run: rm -rf ~/.ssh/id_rsa
+       - name: delete ssh key # 删除 ssh key
+         run: rm -rf ~/.ssh/id_rsa
