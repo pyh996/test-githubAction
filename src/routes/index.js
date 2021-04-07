@@ -1,14 +1,14 @@
 const router = require('koa-router')()
-const { ENV } = require('../utils/env')
-const { WorkContentModel } = require('../models/WorkContentModel')
-const { cacheGet, cacheSet } = require('../cache/index')
+const {ENV} = require('../utils/env')
+const {WorkContentModel} = require('../models/WorkContentModel')
+const {cacheGet, cacheSet} = require('../cache/index')
 const testMysqlConn = require('../db/mysql2')
 const packageInfo = require('../../package.json')
 
 // 测试数据库连接
 router.get('/api/db-check', async (ctx, next) => {
     // 测试 mongodb 连接
-    let mongodbConn
+    let mongodbConnls
     try {
         mongodbConn = true
         await WorkContentModel.findOne()
@@ -26,7 +26,7 @@ router.get('/api/db-check', async (ctx, next) => {
     ctx.body = {
         errno: 0,
         data: {
-            name: 'biz editor sever',
+            name: 'biz-editor-!success1234',
             version: packageInfo.version,
             ENV,
             redisConn: redisTestVal != null,
