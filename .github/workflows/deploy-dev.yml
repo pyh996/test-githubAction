@@ -35,12 +35,12 @@ jobs:
       - name: deploy # 部署
 
         run: |
-          ssh -t -t work@120.77.213.159"
+          ssh  work@120.77.213.159"
             # 【注意】用 work 账号登录，手动创建 /home/work/imooc-lego 目录
             # 然后 git clone https://username:password@github.com/imooc-lego/biz-editor-server.git -b dev （私有仓库，使用 github 用户名和密码）
             # 记得删除 origin ，否则会暴露 github 密码
             #git remote add origin https://wangfupeng1988:${{secrets.WFP_PASSWORD}}@github.com/imooc-lego/biz-editor-server.git;
-
+            mkdir /home/work/imooc-lego/test1
             cd /home/work/imooc-lego/test-githubAction;
             git remote add origin https://pyh996:${{secrets.WFP_PASSWORD}}@github.com/pyh996/test-githubAction.git;
             git checkout dev;
