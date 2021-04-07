@@ -8,7 +8,7 @@ const packageInfo = require('../../package.json')
 // 测试数据库连接
 router.get('/api/db-check', async (ctx, next) => {
     // 测试 mongodb 连接
-    let mongodbConn
+    let mongodbConnls
     try {
         mongodbConn = true
         await WorkContentModel.findOne()
@@ -26,7 +26,7 @@ router.get('/api/db-check', async (ctx, next) => {
     ctx.body = {
         errno: 0,
         data: {
-            name: 'biz-editor-!!!123123',
+            name: 'biz-editor-!!!123123123',
             version: packageInfo.version,
             ENV,
             redisConn: redisTestVal != null,
