@@ -30,7 +30,7 @@ jobs:
 
           echo "${{secrets.EDITORSERVER}}" > ~/.ssh/id_rsa # secret 在这里配置 https://github.com/imooc-lego/biz-editor-server/settings/secrets
           chmod 600 ~/.ssh/id_rsa
-          ssh-add ~/.ssh/id_rsa
+
           ssh-keyscan "120.77.213.159" >> ~/.ssh/known_hosts
       - name: deploy # 部署
         run: |
