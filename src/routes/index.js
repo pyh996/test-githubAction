@@ -26,7 +26,7 @@ router.get('/api/db-check', async (ctx, next) => {
     ctx.body = {
         errno: 0,
         data: {
-            name: 'biz-editor-!!!123123123qwe',
+            name: 'biz-editor-!!!3',
             version: packageInfo.version,
             ENV,
             redisConn: redisTestVal != null,
